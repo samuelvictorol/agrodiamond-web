@@ -33,11 +33,20 @@
             <q-btn
               unelevated
               rounded
+              outlined
+              no-caps
+              icon="mdi-shield-account"
+              class="btn-gold q-ml-xs"
+              to="/admin"
+            />
+            <q-btn
+              unelevated
+              rounded
               no-caps
               label="Fazer login"
               icon="mdi-login"
-              class="btn-gold q-ml-md"
-              @click="goToLogin"
+              class="btn-gold"
+              to="/app"
             />
           </div>
         </div>
@@ -347,7 +356,7 @@
         <section id="videos" class="section-dark section-spacing">
           <div class="container-xl">
             <div class="section-header text-center">
-              <div class="section-kicker">Conteúdo em vídeo</div>
+              <div class="section-kicker">CASES E DESTAQUES</div>
               <h2 class="section-title">Agrodiamond em movimento</h2>
               <p class="section-description">
                 Espaço reservado para dois vídeos do YouTube da agrodiamond.
@@ -390,10 +399,10 @@
         <section id="localizacao" class="section-carbon section-spacing">
           <div class="container-xl">
             <div class="section-header text-center">
-              <div class="section-kicker">Onde será o evento</div>
+              <div class="section-kicker">Onde Estamos</div>
               <h2 class="section-title">Localização</h2>
               <p class="section-description">
-                Tatersal Rubico de Carvalho - Parque Fernando Costa - Uberaba - Minas Gerais
+                Em frente ao condomínio Vila do Sol I - Valparaíso de Goiás, GO.
               </p>
             </div>
 
@@ -404,29 +413,28 @@
 
                   <div class="location-item">
                     <q-icon name="mdi-map-marker" class="text-gold q-mr-sm" />
-                    <span>Tatersal Rubico de Carvalho</span>
+                    <span>Quadra 2 Rua 2 - Etapa A, Valparaiso I</span>
                   </div>
 
                   <div class="location-item">
                     <q-icon name="mdi-pine-tree" class="text-gold q-mr-sm" />
-                    <span>Parque Fernando Costa</span>
+                    <span>Valparaíso de Goiás - GO</span>
                   </div>
 
                   <div class="location-item">
                     <q-icon name="mdi-city-variant-outline" class="text-gold q-mr-sm" />
-                    <span>Uberaba - Minas Gerais</span>
+                    <span>AgroDiamond</span>
                   </div>
 
                   <div class="location-item">
                     <q-icon name="mdi-calendar-month" class="text-gold q-mr-sm" />
-                    <span>28 de Abril de 2026</span>
+                    <span>das 8h às 18h</span>
                   </div>
 
                   <q-separator dark class="q-my-lg separator-gold" />
 
                   <p class="location-text">
-                    Uma noite pensada para celebrar tradição, seleção criteriosa,
-                    genética de excelência e uma experiência memorável no agronegócio.
+                    Empresa especializada em marketing de elite para o agronegócio, com foco em leilões,
                   </p>
 
                   <q-btn
@@ -539,15 +547,13 @@ const router = useRouter()
 const leftDrawerOpen = ref(false)
 const chatDialog = ref(false)
 
-// Troque pelos IDs reais dos vídeos da agrodiamond
-const videoOne = 'https://www.youtube.com/embed/VIDEO_ID_1'
-const videoTwo = 'https://www.youtube.com/embed/VIDEO_ID_2'
+const videoOne = 'https://www.youtube.com/embed/IRRgYD2RD6M?si=bLlcEQZMVQLyS_ax'
+const videoTwo = 'https://www.youtube.com/embed/lJZ7txmtEWY?si=_ZvcyqGUz1kM-fDQ'
 
-// Pode trocar depois por um embed mais exato se quiser
-const mapSrc = 'https://www.google.com/maps?q=Parque%20Fernando%20Costa%20Uberaba%20MG&z=15&output=embed'
+const mapSrc = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d239.61668874914636!2d-47.98452631467591!3d-16.07238900921839!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93598419304fa38b%3A0xd1952e4d16ff4a96!2sCondom%C3%ADnio%20Residencial%20Villa%20Do%20Sol%20I!5e0!3m2!1spt-BR!2sbr!4v1775786241952!5m2!1spt-BR!2sbr'
 
 function goToLogin () {
-  router.push('/login')
+  router.push('/admin')
 }
 </script>
 
@@ -1019,7 +1025,7 @@ function goToLogin () {
   }
 
   .parallax-hero {
-    background-image: url('/gadoMobile.jpeg');
+    background-image: url('/gadoMobile.jpg');
     background-position: center top;
     background-size: cover;
   }

@@ -5,23 +5,16 @@
       <q-toolbar class="container-xl q-px-md q-py-sm">
         <div class="row items-center no-wrap full-width justify-between">
           <div class="row items-center no-wrap">
-            <q-btn
-              flat
-              dense
-              round
-              icon="mdi-menu"
-              class="lt-md q-mr-sm"
-              @click="leftDrawerOpen = !leftDrawerOpen"
-            />
 
             <div class="brand-wrap row items-center no-wrap">
               <q-icon name="mdi-diamond-stone" size="28px" class="text-gold q-mr-sm" />
               <div>
                 <div class="brand-name">agrodiamond</div>
-                <div class="brand-subtitle">Método que transforma marketing em faturamento</div>
+                <div v-if="!isMobile" class="brand-subtitle">Método que transforma marketing em faturamento</div>
               </div>
             </div>
           </div>
+          <q-btn flat dense round icon="mdi-menu" class="lt-md q-mr-sm" @click="leftDrawerOpen = !leftDrawerOpen" />
 
           <div class="gt-sm row items-center no-wrap nav-desktop">
             <a href="#inicio" class="nav-link">Início</a>
@@ -30,37 +23,15 @@
             <a href="#videos" class="nav-link">Vídeos</a>
             <a href="#localizacao" class="nav-link">Localização</a>
 
-            <q-btn
-              unelevated
-              rounded
-              outlined
-              no-caps
-              icon="mdi-shield-account"
-              class="btn-gold q-ml-xs"
-              to="/admin"
-            />
-            <q-btn
-              unelevated
-              rounded
-              no-caps
-              label="Fazer login"
-              icon="mdi-login"
-              class="btn-gold"
-              to="/app"
-            />
+            <q-btn unelevated rounded outlined no-caps icon="mdi-shield-account" class="btn-gold q-ml-xs" to="/admin" />
+            <q-btn unelevated rounded no-caps label="Fazer login" icon="mdi-login" class="btn-gold" to="/app" />
           </div>
         </div>
       </q-toolbar>
     </q-header>
 
     <!-- DRAWER MOBILE -->
-    <q-drawer
-      v-model="leftDrawerOpen"
-      side="left"
-      overlay
-      bordered
-      class="bg-carbon text-white"
-    >
+    <q-drawer v-model="leftDrawerOpen" side="right" overlay bordered class="bg-carbon text-white">
       <div class="q-pa-md">
         <div class="row items-center q-mb-lg">
           <q-icon name="mdi-diamond-stone" size="26px" class="text-gold q-mr-sm" />
@@ -77,15 +48,8 @@
           <a href="#videos" class="drawer-link" @click="leftDrawerOpen = false">Vídeos</a>
           <a href="#localizacao" class="drawer-link" @click="leftDrawerOpen = false">Localização</a>
 
-          <q-btn
-            unelevated
-            rounded
-            no-caps
-            label="Fazer login"
-            icon="mdi-login"
-            class="btn-gold q-mt-md"
-            @click="goToLogin"
-          />
+          <q-btn unelevated rounded no-caps label="Fazer login" icon="mdi-login" class="btn-gold q-mt-md"
+            @click="goToLogin" />
         </div>
       </div>
     </q-drawer>
@@ -102,7 +66,7 @@
               <div class="hero-text animate__animated animate__fadeInUp">
                 <div class="hero-chip">
                   <q-icon name="mdi-diamond-stone" class="q-mr-xs" />
-                  Marketing de Elite para o Agronegócio
+                  Marketing de Elite para Agropecuária.
                 </div>
 
                 <h1 class="hero-title">
@@ -114,37 +78,23 @@
                 </p>
 
                 <div class="hero-highlight">
-                  <span class="text-gold">TJG Experience - Edição Especial de 20 anos</span>
+                  <span class="text-gold">Estaremos na TJG Experience - Edição Especial de 20 anos</span>
                 </div>
 
                 <p class="hero-description">
-                  Uma landing premium voltada ao agro, ao marketing de leilões e à autoridade
-                  de marcas que desejam comunicar valor, tradição e resultado com presença digital forte.
+                  A agrodiamond é a solução premium de marketing para leilões, marcas e eventos do agronegócio.
+                  Posicionamento estratégico, design de elite e comunicação voltada para resultados.
                 </p>
 
                 <div class="hero-actions row q-col-gutter-sm q-mt-lg">
                   <div class="col-auto">
-                    <q-btn
-                      unelevated
-                      rounded
-                      no-caps
-                      label="Quero conhecer"
-                      icon-right="mdi-arrow-right"
-                      class="btn-gold btn-hero"
-                      href="#evento"
-                    />
+                    <q-btn unelevated rounded no-caps label="Quero conhecer" icon-right="mdi-arrow-right"
+                      class="btn-gold btn-hero" href="#evento" />
                   </div>
 
                   <div class="col-auto">
-                    <q-btn
-                      outline
-                      rounded
-                      no-caps
-                      label="Fazer login"
-                      icon="mdi-login"
-                      class="btn-outline-light btn-hero"
-                      @click="goToLogin"
-                    />
+                    <q-btn outline rounded no-caps label="Fazer login" icon="mdi-login"
+                      class="btn-outline-light btn-hero" @click="goToLogin" />
                   </div>
                 </div>
 
@@ -152,24 +102,24 @@
                   <div class="col-12 col-sm-4">
                     <div class="info-card-mini">
                       <q-icon name="mdi-calendar-star" size="22px" class="text-gold q-mb-sm" />
-                      <div class="mini-title">Data</div>
-                      <div class="mini-text">28 de Abril de 2026</div>
+                      <div class="mini-title">Escala</div>
+                      <div class="mini-text">Campanhas, eventos e experiências comerciais</div>
                     </div>
                   </div>
 
                   <div class="col-12 col-sm-4">
                     <div class="info-card-mini">
                       <q-icon name="mdi-map-marker-radius" size="22px" class="text-gold q-mb-sm" />
-                      <div class="mini-title">Local</div>
-                      <div class="mini-text">Uberaba - MG</div>
+                      <div class="mini-title">Posicionamento</div>
+                      <div class="mini-text">Especialização em leilões e eventos agro</div>
                     </div>
                   </div>
 
                   <div class="col-12 col-sm-4">
                     <div class="info-card-mini">
                       <q-icon name="mdi-bullhorn" size="22px" class="text-gold q-mb-sm" />
-                      <div class="mini-title">Foco</div>
-                      <div class="mini-text">Leilões e marketing agro</div>
+                      <div class="mini-title">Resultados</div>
+                      <div class="mini-text">Comunicação voltada para geração de faturamento</div>
                     </div>
                   </div>
                 </div>
@@ -337,15 +287,8 @@
                     </div>
                   </div>
 
-                  <q-btn
-                    unelevated
-                    rounded
-                    no-caps
-                    label="Ver localização"
-                    icon="mdi-map-search"
-                    class="btn-gold q-mt-lg"
-                    href="#localizacao"
-                  />
+                  <q-btn unelevated rounded no-caps label="Ver localização" icon="mdi-map-search"
+                    class="btn-gold q-mt-lg" href="#localizacao" />
                 </div>
               </div>
             </div>
@@ -367,13 +310,9 @@
               <div class="col-12 col-md-6">
                 <div class="video-card animate__animated animate__fadeInUp">
                   <div class="video-frame">
-                    <iframe
-                      :src="videoOne"
-                      title="Vídeo 1 Agrodiamond"
-                      frameborder="0"
+                    <iframe :src="videoOne" title="Vídeo 1 Agrodiamond" frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
-                    ></iframe>
+                      allowfullscreen></iframe>
                   </div>
                 </div>
               </div>
@@ -381,13 +320,9 @@
               <div class="col-12 col-md-6">
                 <div class="video-card animate__animated animate__fadeInUp animate__delay-1s">
                   <div class="video-frame">
-                    <iframe
-                      :src="videoTwo"
-                      title="Vídeo 2 Agrodiamond"
-                      frameborder="0"
+                    <iframe :src="videoTwo" title="Vídeo 2 Agrodiamond" frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
-                    ></iframe>
+                      allowfullscreen></iframe>
                   </div>
                 </div>
               </div>
@@ -437,27 +372,15 @@
                     Empresa especializada em marketing de elite para o agronegócio, com foco em leilões,
                   </p>
 
-                  <q-btn
-                    unelevated
-                    rounded
-                    no-caps
-                    label="Fazer login"
-                    icon="mdi-login"
-                    class="btn-gold q-mt-md"
-                    @click="goToLogin"
-                  />
+                  <q-btn unelevated rounded no-caps label="Fazer login" icon="mdi-login" class="btn-gold q-mt-md"
+                    @click="goToLogin" />
                 </div>
               </div>
 
               <div class="col-12 col-md-7">
                 <div class="map-wrapper">
-                  <iframe
-                    :src="mapSrc"
-                    style="border:0;"
-                    allowfullscreen
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                  <iframe :src="mapSrc" style="border:0;" allowfullscreen loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
             </div>
@@ -478,27 +401,14 @@
             </div>
 
             <div class="footer-actions">
-              <q-btn
-                flat
-                no-caps
-                icon="mdi-chevron-up"
-                label="Voltar ao topo"
-                class="text-grey-3"
-                href="#inicio"
-              />
+              <q-btn flat no-caps icon="mdi-chevron-up" label="Voltar ao topo" class="text-grey-3" href="#inicio" />
             </div>
           </div>
         </footer>
 
         <!-- BOTÃO FLUTUANTE CHAT -->
         <q-page-sticky position="bottom-right" :offset="[20, 20]">
-          <q-btn
-            round
-            size="18px"
-            icon="mdi-robot-happy-outline"
-            class="chat-fab"
-            @click="chatDialog = true"
-          />
+          <q-btn round size="18px" icon="mdi-robot-happy-outline" class="chat-fab" @click="chatDialog = true" />
         </q-page-sticky>
 
         <!-- DIALOG CHAT FUTURO -->
@@ -546,13 +456,13 @@ const router = useRouter()
 
 const leftDrawerOpen = ref(false)
 const chatDialog = ref(false)
-
+const isMobile = ref(window.innerWidth < 768)
 const videoOne = 'https://www.youtube.com/embed/IRRgYD2RD6M?si=bLlcEQZMVQLyS_ax'
 const videoTwo = 'https://www.youtube.com/embed/lJZ7txmtEWY?si=_ZvcyqGUz1kM-fDQ'
 
 const mapSrc = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d239.61668874914636!2d-47.98452631467591!3d-16.07238900921839!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93598419304fa38b%3A0xd1952e4d16ff4a96!2sCondom%C3%ADnio%20Residencial%20Villa%20Do%20Sol%20I!5e0!3m2!1spt-BR!2sbr!4v1775786241952!5m2!1spt-BR!2sbr'
 
-function goToLogin () {
+function goToLogin() {
   router.push('/admin')
 }
 </script>
@@ -635,7 +545,7 @@ function goToLogin () {
 
 .drawer-link {
   padding: 12px 6px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .btn-gold {
@@ -651,7 +561,7 @@ function goToLogin () {
 }
 
 .btn-outline-light {
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   color: #f2f2f2;
 }
 
@@ -723,7 +633,7 @@ function goToLogin () {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.7) 45%, rgba(10, 10, 10, 0.48) 100%),
-    linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 100%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.55) 100%);
 }
 
 .hero-content {
@@ -742,7 +652,7 @@ function goToLogin () {
   align-items: center;
   padding: 10px 16px;
   border: 1px solid rgba(212, 175, 55, 0.24);
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   color: #e7d39b;
   border-radius: 999px;
   font-size: 0.92rem;
@@ -780,8 +690,8 @@ function goToLogin () {
 
 .hero-mini-info .info-card-mini {
   height: 100%;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   padding: 18px;
   backdrop-filter: blur(10px);
@@ -801,11 +711,11 @@ function goToLogin () {
 .hero-side-card,
 .event-highlight-card,
 .glass-card {
-  background: linear-gradient(180deg, rgba(30,30,30,0.9) 0%, rgba(17,17,17,0.95) 100%);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.9) 0%, rgba(17, 17, 17, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 24px;
   padding: 28px;
-  box-shadow: 0 25px 80px rgba(0,0,0,0.28);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.28);
 }
 
 .hero-side-card h3,
@@ -862,8 +772,8 @@ function goToLogin () {
   display: flex;
   align-items: center;
   min-height: 54px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
   padding: 14px 16px;
   color: #e7e7e7;
@@ -877,10 +787,10 @@ function goToLogin () {
 }
 
 .stat-item {
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 18px;
   padding: 18px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .stat-number {
@@ -897,8 +807,8 @@ function goToLogin () {
 
 /* VIDEO */
 .video-card {
-  background: linear-gradient(180deg, rgba(28,28,28,0.9) 0%, rgba(18,18,18,0.95) 100%);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(28, 28, 28, 0.9) 0%, rgba(18, 18, 18, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 22px;
   padding: 14px;
   overflow: hidden;
@@ -923,9 +833,9 @@ function goToLogin () {
 .map-wrapper {
   overflow: hidden;
   border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   min-height: 420px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.24);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
 }
 
 .map-wrapper iframe {
@@ -957,7 +867,7 @@ function goToLogin () {
 /* FOOTER */
 .footer-section {
   padding: 28px 20px 40px;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   background: #0d0d0d;
 }
 
@@ -980,7 +890,7 @@ function goToLogin () {
   background: linear-gradient(180deg, #1c1c1c 0%, #111111 100%);
   color: #fff;
   border-radius: 22px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .chat-placeholder {
@@ -1032,7 +942,7 @@ function goToLogin () {
 
   .hero-overlay {
     background:
-      linear-gradient(180deg, rgba(8,8,8,0.83) 0%, rgba(8,8,8,0.62) 40%, rgba(8,8,8,0.86) 100%);
+      linear-gradient(180deg, rgba(8, 8, 8, 0.83) 0%, rgba(8, 8, 8, 0.62) 40%, rgba(8, 8, 8, 0.86) 100%);
   }
 
   .hero-description,

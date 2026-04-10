@@ -31,7 +31,7 @@
     </q-header>
 
     <!-- DRAWER MOBILE -->
-    <q-drawer v-model="leftDrawerOpen" side="right" overlay bordered class="bg-carbon text-white">
+    <q-drawer v-model="leftDrawerOpen" side="right" overlay class="bg-carbon bg-dark text-white">
       <div class="q-pa-md">
         <div class="row items-center q-mb-lg">
           <q-icon name="mdi-diamond-stone" size="26px" class="text-gold q-mr-sm" />
